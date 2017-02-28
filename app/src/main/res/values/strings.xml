@@ -2,4 +2,6 @@
     <string name="app_name">Monster Wiki Legends</string>
     <string name="monsterLab">Le Monster Lab</string>
     <string name="bestiaire">Le bestiaire</string>
-</resources>
+    <string name="entête">Entête </string>
+
+    </resources>

@@ -42,4 +42,15 @@
         android:id="@+id/buttonBestiaire"
         android:layout_below="@+id/buttonMonsterLab"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_wcslogo"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageView"
+        android:layout_toRightOf="@+id/buttonMonsterLab"
+        android:layout_toEndOf="@+id/buttonMonsterLab" />
 </RelativeLayout>
