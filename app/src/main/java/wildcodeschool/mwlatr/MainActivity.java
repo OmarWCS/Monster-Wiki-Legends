@@ -12,15 +12,11 @@ public class MainActivity extends AppCompatActivity {
 
     final Intent toCreate = new Intent(this, MonsterLab.class);
     final Intent toBestiary =new Intent(this, Bestiaire.class);
-    final Button
-    final Button
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void setToBestiary(Intent toBestiary) {
-        this.toBestiary = toBestiary;
     }
-}
+
