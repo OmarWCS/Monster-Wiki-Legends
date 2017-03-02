@@ -2,6 +2,8 @@ package wildcodeschool.mwlatr;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -11,9 +13,9 @@ import java.util.List;
 
 public class Bestiaire extends AppCompatActivity {
 
-    private ListView mListview = (ListView) findViewById(R.id.mlistview);
-    private List<Monster> MonsterArrayList= new ArrayList<>();
-    private ArrayAdapter arrayAdapter = null;
+    private ListView mListview;
+    private List<Monster> MonsterArrayList= new ArrayList<Monster>();
+    final Button création = (Button) findViewById(R.id.création);
 
 
 
@@ -21,44 +23,57 @@ public class Bestiaire extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bestiaire);
+        mListview= (ListView) findViewById(R.id.mlistview);
+        ArrayAdapter arrayAdapter;
 
         //if(intent.hasExtras)
 
-        final Button création = (Button) findViewById(R.id.création);
+
         //int Type = getIntent().getExtras().getIntegerArrayList()
 
 
 
 
-        // Feu : 1 /Magie : 2/ Lumiére : 3/ Eau : 4/ Métal : 5/ "Nature : 6/ Terre : 7/ Foudre : 8 / PLante : 9: Mort 10/
-        Monster FireLion = new Monster("FireLion", 1);
-        Monster Firesaur = new Monster("Firesaur", 1);
-        Monster Génie = new Monster ("Génie", 2);
-        Monster LightSpirit = new Monster ("LightSpirit", 3);
-        Monster MerSnake = new Monster ("Mersnake", 4);
-        Monster Metalsaur = new Monster("Metalsaur", 5);
-        Monster Panda = new Monster ("Panda", 6);
-        Monster Rockilla = new Monster ("Rockilla", 7);
-        Monster ThunderEagle = new Monster ("ThunderEagle", 8);
-        Monster Treezard = new Monster ("Treezard", 9);
-        Monster Turtle = new Monster ("Turtle", 4);
-        Monster TyrannoKing= new Monster ("TyrannoKing", 10);
 
-        this.MonsterArrayList.add(FireLion);
-        this.MonsterArrayList.add(Firesaur);
-        this.MonsterArrayList.add(Génie);
-        this.MonsterArrayList.add(LightSpirit);
-        this.MonsterArrayList.add(MerSnake);
-        this.MonsterArrayList.add(Metalsaur);
-        this.MonsterArrayList.add(Panda);
-        this.MonsterArrayList.add(Rockilla);
-        this.MonsterArrayList.add(ThunderEagle);
-        this.MonsterArrayList.add(Treezard);
-        this.MonsterArrayList.add(Turtle);
-        this.MonsterArrayList.add(TyrannoKing);
 
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.activity_list_item, MonsterArrayList);
+        MonsterArrayList.add(new Monster("Firesaur", R.drawable.firesaur_1));
+        MonsterArrayList.add(new Monster("FireLion", R.drawable.fire_lion_1));
+        MonsterArrayList.add(new Monster ("Génie", R.drawable.genie_1));
+        MonsterArrayList.add(new Monster ("LightSpirit", R.drawable.light_spirit_1));
+        MonsterArrayList.add(new Monster ("MerSnake", R.drawable.mersnake_1));
+        MonsterArrayList.add(new Monster ("Metalsaur", R.drawable.metalsaur_1));
+        MonsterArrayList.add(new Monster ("Panda", R.drawable.panda_1));
+        MonsterArrayList.add(new Monster ("Rockilla", R.drawable.rockilla_1));
+        MonsterArrayList.add(new Monster ("ThunderEagle", R.drawable.thunder_eagle_1));
+        MonsterArrayList.add(new Monster ("Treezard", R.drawable.treezard_1));
+        MonsterArrayList.add(new Monster ("Turtle", R.drawable.turtle_1));
+        MonsterArrayList.add(new Monster ("TyrannoKing", R.drawable.tyrannoking_1));
+
+        arrayAdapter = new ArrayAdapter<Monster>(this, android.R.layout.activity_list_item, MonsterArrayList);
+        mListview.setAdapter(arrayAdapter);
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_bestiary, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
+
 

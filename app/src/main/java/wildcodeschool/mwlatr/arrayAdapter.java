@@ -39,7 +39,7 @@ public class arrayAdapter extends ArrayAdapter<Monster> {
         TextView textView = (TextView) v.findViewById(R.id.textView);
         ImageView imageView = (ImageView) v.findViewById(R.id.imageView);
         textView.setText(MonsterArrayList.get(position).getMonsterName());
-        imageView.setImageResource(MonsterArrayList.get(position).getMonsterElement());
+        imageView.setImageResource(MonsterArrayList.get(position).getElementImage());
         return v;
 
     }

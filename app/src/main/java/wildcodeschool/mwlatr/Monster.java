@@ -2,31 +2,24 @@ package wildcodeschool.mwlatr;
 
 
 
-/**
- * Created by mathieu on 01/03/17.
- */
 
 public class Monster {
 
-    private String Name;
-    private int Element;
+    private String MonsterName;
+    private int ElementImage;
 
 
-    public String getMonsterName(){
-        return this.Name;
+    public Monster(String Name, int ElementImage){
+
+
+        this.MonsterName= Name;
+        this.ElementImage= ElementImage;}
+
+
+        public String getMonsterName(){
+            return this.MonsterName;}
+
+        public int getElementImage(){
+            return this.ElementImage;}
+
     }
-
-    public int getMonsterElement() {
-        return this.Element;
-    }
-
-    public Monster(String Name, int Element){
-        this.Name= Name;
-        this.Element= Element;
-
-    }
-
-
-
-
-}
