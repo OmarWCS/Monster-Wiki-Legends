@@ -1,7 +1,6 @@
 package wildcodeschool.mwlatr;
 
-import java.lang.reflect.Type;
-import java.util.jar.Attributes;
+
 
 /**
  * Created by mathieu on 01/03/17.
@@ -10,18 +9,18 @@ import java.util.jar.Attributes;
 public class Monster {
 
     private String Name;
-    private String Element;
+    private int Element;
 
 
-    public String getName(){
+    public String getMonsterName(){
         return this.Name;
     }
 
-    public String getElement() {
+    public int getMonsterElement() {
         return this.Element;
     }
 
-    public Monster(String Name, String Element){
+    public Monster(String Name, int Element){
         this.Name= Name;
         this.Element= Element;
 
