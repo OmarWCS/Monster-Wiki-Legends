@@ -3,13 +3,17 @@ package wildcodeschool.mwlatr;
 
 
 
-public class Monster {
+class Monster {
+
+    public String toString(){
+        return this.MonsterName+ " " + this.ElementImage;
+    }
 
     private String MonsterName;
     private int ElementImage;
 
 
-    public Monster(String Name, int ElementImage){
+    Monster(String Name, int ElementImage){
 
 
         this.MonsterName= Name;
@@ -21,5 +25,6 @@ public class Monster {
 
         public int getElementImage(){
             return this.ElementImage;}
+
 
     }

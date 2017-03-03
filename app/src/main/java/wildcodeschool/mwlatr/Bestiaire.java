@@ -5,33 +5,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Bestiaire extends AppCompatActivity {
 
-    private ListView mListview;
-    private List<Monster> MonsterArrayList= new ArrayList<Monster>();
-    final Button création = (Button) findViewById(R.id.création);
 
+    private static ArrayList<Monster> MonsterArrayList;
+    private ListView ListV;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bestiaire);
-        mListview= (ListView) findViewById(R.id.mlistview);
-        ArrayAdapter arrayAdapter;
 
-        //if(intent.hasExtras)
+        ListV = (ListView) findViewById(R.id.mlistview);
 
-
-        //int Type = getIntent().getExtras().getIntegerArrayList()
-
-
+        if (MonsterArrayList == null) {
+            MonsterArrayList= new ArrayList<>();
+        }
 
 
 
@@ -49,10 +45,11 @@ public class Bestiaire extends AppCompatActivity {
         MonsterArrayList.add(new Monster ("Turtle", R.drawable.turtle_1));
         MonsterArrayList.add(new Monster ("TyrannoKing", R.drawable.tyrannoking_1));
 
-        arrayAdapter = new ArrayAdapter<Monster>(this, android.R.layout.activity_list_item, MonsterArrayList);
-        mListview.setAdapter(arrayAdapter);
+        ArrayAdapter mAdapter = new CustomAdapter (this, R.layout.activity_list_item,  MonsterArrayList);
+        this.ListV.setAdapter(mAdapter);
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -75,5 +72,6 @@ public class Bestiaire extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
 
 
